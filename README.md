@@ -1,1 +1,1 @@
-# rock_two
+# Rock Paper Scissors game

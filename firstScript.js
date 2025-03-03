@@ -36,31 +36,31 @@ const playGame = () => {
     // Definie the games' rules
     function playRound(humanChoice, computerChoice) {
         if (computerChoice === "Paper" && humanChoice === "Rock") {
-            console.log("You lose! Paper beats Rock")
+            alert("You lose! Paper beats Rock");
             computerScore ++;
 
         } else if (computerChoice === "Rock" && humanChoice === "Scissors" ) {
-            console.log("You lose! Rock beats Scissors")
+            alert("You lose! Rock beats Scissors");
             computerScore ++;
 
         } else if (computerChoice === "Scissors" && humanChoice === "Paper") {
-            console.log("You lose! Scissors beats Paper")
+            alert("You lose! Scissors beats Paper");
             computerScore ++;
 
         } else if (humanChoice === "Paper" && computerChoice === "Rock") {
-            console.log("You Win ! Paper beats Rock")
+            alert("You Win ! Paper beats Rock");
             humanScore++;
 
         } else if (humanChoice === "Rock" && computerChoice === "Scissors" ) {
-            console.log("You Win! Rock beats Scissors")
+            alert("You Win! Rock beats Scissors");
             humanScore++;
 
         } else if (humanChoice === "Scissors" && computerChoice === "Paper") {
-            console.log("You Win! Scissors beats Paper")
+            alert("You Win! Scissors beats Paper");
             humanScore++; 
 
         } else if (humanChoice === computerChoice) {
-            console.log("It's a tie!");
+            alert("It's a tie!");
         };
     };
 
