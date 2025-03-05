@@ -36,46 +36,71 @@ const playGame = () => {
     // Definie the games' rules
     function playRound(humanChoice, computerChoice) {
         if (computerChoice === "Paper" && humanChoice === "Rock") {
-            alert("You lose! Paper beats Rock");
+            console.log("You lose! Paper beats Rock");
             computerScore ++;
 
         } else if (computerChoice === "Rock" && humanChoice === "Scissors" ) {
-            alert("You lose! Rock beats Scissors");
+            console.log("You lose! Rock beats Scissors");
             computerScore ++;
 
         } else if (computerChoice === "Scissors" && humanChoice === "Paper") {
-            alert("You lose! Scissors beats Paper");
+            console.log("You lose! Scissors beats Paper");
             computerScore ++;
 
         } else if (humanChoice === "Paper" && computerChoice === "Rock") {
-            alert("You Win ! Paper beats Rock");
+            console.log("You Win ! Paper beats Rock");
             humanScore++;
 
         } else if (humanChoice === "Rock" && computerChoice === "Scissors" ) {
-            alert("You Win! Rock beats Scissors");
+            console.log("You Win! Rock beats Scissors");
             humanScore++;
 
         } else if (humanChoice === "Scissors" && computerChoice === "Paper") {
-            alert("You Win! Scissors beats Paper");
+            console.log("You Win! Scissors beats Paper");
             humanScore++; 
 
         } else if (humanChoice === computerChoice) {
-            alert("It's a tie!");
+            console.log("It's a tie!");
         };
     };
 
-    while (i < 5) {
-        let computerAnswer = getComputerChoice();
-        let humanAnswer = getHumanChoice();
-        // Call the inside function
-        playRound(humanAnswer,computerAnswer);
-        // Increment the loop
-        i++;
-    }
+    // Creation of buttons and display to the page
+    const rock = document.createElement("button");
+    rock.textContent = "Rock";
+    document.body.appendChild(rock);
+    rock.addEventListener("click", function() {
+        playRound("Rock", getComputerChoice());
+    });
+
+    const paper = document.createElement("button");
+    paper.textContent = "Paper";
+    document.body.appendChild(paper);
+    paper.addEventListener("click", function() {
+        playRound("Paper", getComputerChoice());
+    });
+
+    const scissors = document.createElement("button");
+    scissors.textContent = "Scissors";
+    document.body.appendChild(scissors);
+    scissors.addEventListener("click", function() {
+        playRound("Scissors", getComputerChoice());
+    });
+  
+    const divDisplay = document.createElement("div");
+    document.body.appendChild(divDisplay);
+
+    // while (i < 5) {
+    //     let computerAnswer = getComputerChoice();
+    //     let humanAnswer = getHumanChoice();
+    //     // Call the inside function
+    //     playRound(humanAnswer,computerAnswer);
+    //     // Increment the loop
+    //     i++;
+    // }
 
     if (humanScore > computerScore) {
         console.log(`You Win! ${humanScore} vs ${computerScore}`)
-    } else if (computerScore < humanScore) {
+    } else if (computerScore > humanScore) {
         console.log(`You Loose! ${computerScore} vs ${humanScore}`)
     } else {
         console.log(`It's a Tie! ${computerScore} vs ${humanScore}`)
